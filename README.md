@@ -4,7 +4,8 @@
 ## Overview
 <p>Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within X amount of attempts.</p>
 
-![Hangman Image](./images/hangman.png)
+![Hangman lost Image](./images/hangman_lost.png)
+![Hangman won Image](./images/hangman_won.png)
 <br><br>
 <p>This is an implementation of the Hangman game, where the computer thinks of a random word and the player/user tries to guess it.</p>
 
