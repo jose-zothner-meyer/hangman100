@@ -4,9 +4,12 @@
 ## Overview
 <p>Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within X amount of attempts.</p>
 
-![Hangman lost Image](./images/hangman_lost.png)
-![Hangman won Image](./images/hangman_won.png)
-<br><br>
+<div style="display: flex; flex-direction: row;">
+    <img src="./images/hangman_lost.png" alt="Hangman lost Image" style="width: 45%; margin-right: 5%;">
+    <img src="./images/hangman_won.png" alt="Hangman won Image" style="width: 45%;">
+</div>
+<p style="text-align: right; font-size: small;"><i>Source: DALL-E by Open AI</i></p>
+<br>
 <p>This is an implementation of the Hangman game, where the computer thinks of a random word and the player/user tries to guess it.</p>
 
 ## Credits
