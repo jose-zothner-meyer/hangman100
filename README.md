@@ -1,5 +1,5 @@
 # Hangman Game
-#### Under develpment. <br> Updated: 01/07/2024
+#### Under develpment. <br> Updated: 02/07/2024
 
 ## Overview
 <p>Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within X amount of attempts.</p>
@@ -37,8 +37,8 @@ The knowledge contained in this repository was primarily taught by <a href='http
       - [2.2.6 Update the latest code changes to GitHub](#226-update-the-latest-code-changes-to-github)
       - [2.2.7 Refactor and optimise current code](#227-refactor-and-optimise-current-code)
     - [2.3: Check if the guessed character is in the word](#23-check-if-the-guessed-character-is-in-the-word)
-      - [2.3.1 Subchapter One](#231-subchapter-one)
-      - [2.3.2 Subchapter Two](#232-subchapter-two)
+      - [2.3.1 Implement the function to check the guessed character](#231-implement-the-function-to-check-the-guessed-character)
+      - [2.3.2 Implement the function to ask for user input](#232-implement-the-function-to-ask-for-user-input)
     - [2.4: Create the Game class](#24-create-the-game-class)
       - [2.4.1 Subchapter One](#241-subchapter-one)
       - [2.4.2 Subchapter Two](#242-subchapter-two)
@@ -134,7 +134,7 @@ The random module is one of Python’s built-in modules.
 It has a _choice_ method which returns a random item from a given sequence.
 
 Steps:
-- wrote `import random` on the first line of my Python code
+- Wrote `import random` on the first line of my Python code
 - Created the `random.choice` method and passed the _word_list_ variable into the choice method
 - Assigned the randomly generated word to a variable called _word_
 - Printed out word to the standard output. Ran the code several times and observed the words printed out after each run.
@@ -164,27 +164,48 @@ As per the course's suggestion, my README file should contain certain specific i
 Updated my GitHub repository with the latest code changes from my local machine. Started by staging the modifications and creating a commit. Then, pushed the changes to my GitHub repository.
 
 ```
-# Stage all the changes
+# 1. Stage all the changes
 git add .
 
-# Commit the changes with a descriptive message
+# 2. Commit the changes with a descriptive message
 git commit -m "Add code for creating variables and user input validation"
 
-# Push the changes to the remote repository
-git push origin main
+# Push the changes to the remote repository (the first push needs to be in this format)
+git push -u origin main
+
+# Once that is done you can simply push it (after part 1 and 2 of the process) by following this command:
+git push
 ```
 
 #### 2.2.7 Refactor and optimise current code
-Content here...
+As my tutors say: "Refactoring will be a continuous and constant process, but this is the time to really scrutinise your code."
 
 ### 2.3: Check if the guessed character is in the word
-Content here...
+In this milestone I am checking if the guessede letter is in the randomly chosen word.
 
-#### 2.3.1 Subchapter One
-Content here...
+#### 2.3.1 Implement the function to check the guessed character
+<p>Created a file named _milestone_3.py_ and updated the existing code.<br>
+The aim is to create a function that checks `if` the guessed character is in the _secret word_.</p>
 
-#### 2.3.2 Subchapter Two
-Content here...
+Steps:
+- Created a function named `check_guess` that takes `guess` as a parameter.
+- Converted the `guess` to lowercase to ensure consistency.
+- Used an `if` statement to check if the `guess` is in the `secret_word`.
+- If the `guess` is in the `secret_word`, printed a message saying "Good guess! {guess} is in the word."
+- Otherwise, printed a message saying "Sorry, {guess} is not in the word. Try again."
+
+#### 2.3.2 Implement the function to ask for user input
+<p>The next step is to create a function that asks the player for input and validates the input.</p>
+
+Steps:
+- Created a function named `ask_for_input`.
+- Used a `while True` loop to continuously ask the user for a guess until a valid input is provided.
+- Inside the loop, used the `input` function to ask the player to "Guess a letter".
+- Checked if the input is a single alphabetical character.
+- If the input is valid, called the `check_guess` function and passed the input.
+- Used `break` to exit the loop after a valid guess.
+- If the input is invalid, printed "Invalid letter. Please, enter a single alphabetical character."
+
 
 ### 2.4: Create the Game class
 Content here...
