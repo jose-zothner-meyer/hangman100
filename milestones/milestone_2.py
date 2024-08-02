@@ -2,22 +2,30 @@
 import random
 
 # Create a list containing the names of your 5 favorite fruits.
-fruits = ['Apple', 'Banana', 'Orange', 'Tomato', 'Mango']
-# Assign this list to a variable called word_list.
-word_list = fruits
+fruit_list = ['Apple', 'Banana', 'Orange', 'Tomato', 'Mango']
+
 # Print out the newly created list to the standard output (screen).
-print(word_list)
+print(fruit_list)
 
-# Assign the randomly generated word to a variable called word.
-word = random.choice(word_list)
+# Function to get a random fruit from the list
+def get_random_fruit(fruits):
+    return random.choice(fruits)
+
+# Get a random fruit and assing it to a variable
+random_fruit = get_random_fruit(fruits)
+
 # Print out word to the standard output. Run the code several times and observe the words printed out after each run.
-print(word)
+print(random_fruit)
 
-guess = input()
-# Create an if statement that checks if the length of the input is equal to 1 and the input is alphabetical.
-if len(guess) is 1 and str.isalpha(guess):
-# In the body of the if statement, print a message that says "Good guess!".
-    print("Good Guess!")
-# Create an else block that prints "Oops! That is not a valid input." if the preceding conditions are not met.
-else:
-    print("Ooops! That is not a valid input.")
+# Function to validate the user's guess
+def validate_guess(guess):
+    if len(guess) == 1 and guess.isalpha():
+        print("Good guess!")
+    else:
+        print("Oops! That is not a valid input.")
+
+# Get user's guess
+user_guess = input("Enter a single letter: ")
+
+# Validate the user's guess
+validate_guess(user_guess)
