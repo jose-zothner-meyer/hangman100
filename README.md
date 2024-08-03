@@ -248,8 +248,9 @@ Steps:
 - Created an if statement to check if the guess is not a single alphabetical character (`not guess.isalpha() or len(guess) != 1`).
 
 ### 2.4.4 Refactor and optimise current code
-The new and optimised code version can be found in the milestones folder of this repository, being called [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py), while the old one being: [_milestone_4.py_](./milestones/milestone_4.py).<br>
-My personal suggestion is opening both on different windows to see and follow the changes that were made.
+The optimised version of the code is located in the milestones folder of this repository under the filename [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py). The previous version is available as [_milestone_4.py_](./milestones/milestone_4.py).
+<p>My personal suggestion is opening both on different windows to see and follow the changes that were made.</p>
+<p> This revision makes the code clearer, more concise and user friendly.</p>
 
 - **Meaningful naming**:
     - Renamed methods to be more descriptive.
