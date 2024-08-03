@@ -16,7 +16,7 @@ class Hangman:
         self.num_letters = len(set(self.word))
         self.list_of_guesses = []
 
-    def update_word_guessed(self, guess):
+    def _update_word_guessed(self, guess):
         """
         Updates the word guessed list with the correctly guessed letter.
         
@@ -28,7 +28,7 @@ class Hangman:
                 self.word_guessed[index] = guess
         self.num_letters -= 1
 
-    def handle_correct_guess(self, guess):
+    def _handle_correct_guess(self, guess):
         """
         Handles the logic when the player guesses a correct letter.
         
@@ -38,7 +38,7 @@ class Hangman:
         print(f"Good guess! {guess} is in the word.")
         self._update_word_guessed(guess)
 
-    def handle_incorrect_guess(self, guess):
+    def _handle_incorrect_guess(self, guess):
         """
         Handles the logic when the player guesses an incorrect letter.
         
@@ -49,7 +49,7 @@ class Hangman:
         print(f"Sorry, {guess} is not in the word.")
         print(f"You have {self.num_lives} lives left.")
 
-    def is_valid_guess(self, guess):
+    def _is_valid_guess(self, guess):
         """
         Validates the player's guess.
         
@@ -67,7 +67,7 @@ class Hangman:
             return False
         return True
 
-    def check_guess(self, guess):
+    def _check_guess(self, guess):
         """
         Checks if the guessed letter is in the word.
         
