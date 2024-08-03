@@ -210,7 +210,7 @@ Steps:
 
 
 ### 2.4: Create the Game class
-Creating the class <span style="color:green">&nbsp;Game</spam>
+Creating the class **Game**: 
 
 #### 2.4.1 Define the `__init__` method
 Steps:
@@ -248,7 +248,8 @@ Steps:
 - Created an if statement to check if the guess is not a single alphabetical character (`not guess.isalpha() or len(guess) != 1`).
 
 ### 2.4.4 Refactor and optimise current code
-The new and optimised code version can be found in the milestones folder of this repository, being called [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py).
+The new and optimised code version can be found in the milestones folder of this repository, being called [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py), while the old one being: [_milestone_4.py_](./milestones/milestone_4.py).<br>
+My personal suggestion is opening both on different windows to see and follow the changes that were made.
 
 - **Meaningful naming**:
     - Renamed methods to be more descriptive.
