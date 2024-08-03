@@ -264,7 +264,7 @@ The optimised version of the code is located in the milestones folder of this re
     - Example: `handle_correct_guess` handles the logic for a correct guess, `handle_incorrect_guess` takes care of the logic for an incorrect guess, and `is_valid_guess` validates the guess.
 
 - **Access Modifiers**:
-    - Made helper methods private (using a single underscore: **_**) to indicate that they are intended for internal use within the class.
+    - Made helper methods private (using a single underscore: **_**&nbsp;) to indicate that they are intended for internal use within the class.
     - These methods are intended for internal use within the **Hangman class** and should not be accessed directly from outside the class.
 
 - **Minimal use of `self`**:
