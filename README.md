@@ -40,8 +40,10 @@ The knowledge contained in this repository was primarily taught by <a href='http
       - [2.3.1 Implement the function to check the guessed character](#231-implement-the-function-to-check-the-guessed-character)
       - [2.3.2 Implement the function to ask for user input](#232-implement-the-function-to-ask-for-user-input)
     - [2.4: Create the Game class](#24-create-the-game-class)
-      - [2.4.1 Subchapter One](#241-subchapter-one)
-      - [2.4.2 Subchapter Two](#242-subchapter-two)
+      - [2.4.1 Define the \_\_init_\_ method](#241-define-the-__init__-method)
+      - [2.4.2 Implement the function to check the guessed character](#242-implement-the-function-to-check-the-guessed-character)
+      - [2.4.3 Implement the function to ask for user input](#243-implement-the-function-to-ask-for-user-input)
+      - [2.4.4 Refactor and optimise current code](#244-refactor-and-optimise-current-code)
     - [2.5: Putting it all together](#25-putting-it-all-together)
       - [2.5.1 Subchapter One](#251-subchapter-one)
       - [2.5.2 Subchapter Two](#252-subchapter-two)
@@ -208,13 +210,72 @@ Steps:
 
 
 ### 2.4: Create the Game class
-Content here...
+Creating the class <span style="color:green">&nbsp;Game</spam>
 
-#### 2.4.1 Subchapter One
-Content here...
+#### 2.4.1 Define the `__init__` method
+Steps:
+- Created a class called `Hangman`.
+- Defined an `__init__` method to initialize the attributes of the class.
+- Passed `word_list` and `num_lives` as parameters to the `__init__` method, with `num_lives` having a default value of 5.
+- Initialized the following attributes:
+  - `word`: The word to be guessed, picked randomly from the `word_list`.
+  - `word_guessed`: A list of underscores representing the letters of the word not yet guessed.
+  - `num_letters`: The number of unique letters in the word that have not been guessed yet.
+  - `num_lives`: The number of lives the player has at the start of the game.
+  - `word_list`: The list of words.
+  - `list_of_guesses`: A list of the guesses that have already been tried.
 
-#### 2.4.2 Subchapter Two
-Content here...
+#### 2.4.2 Implement the function to check the guessed character
+Steps:
+- Created a method called check_guess that takes guess as a parameter.
+- Converted the guessed letter to lowercase.
+- Created an `if` statement to check if the guess is in the word.
+  - <b>If the guess is in the word</b>:
+    - Printed a message saying “Good guess! {guess} is in the word.”
+    - Created a for-loop to loop through each letter in the word and replace the corresponding underscore in word_guessed with the guessed letter.
+    - Reduced `num_letters` by 1.
+  - <b>Else</b>:
+	- Reduced `num_lives` by 1.
+	- Printed a message saying “Sorry, {guess} is not in the word.”
+	- Printed another message saying “You have {num_lives} lives left.”
+
+### 2.4.3 Implement the function to ask for user input
+Steps:
+
+- Created a method called `ask_for_input`.
+- Used a `while True` loop to continually ask the user for input until a valid guess is made.
+- Asked the user to guess a letter and assigned it to a variable called _guess_.
+- Created an if statement to check if the guess is not a single alphabetical character (`not guess.isalpha() or len(guess) != 1`).
+
+### 2.4.4 Refactor and optimise current code
+The new and optimised code version can be found in the milestones folder of this repository, being called [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py).
+
+1. <b>Meaningul naming</b>:
+<br>
+Renamed methods to be more descriptive.<br>
+e.g.: `update_word_guessed`, `handle_correct_guess`, `handle_incorrect_guess`.
+2. <b>Elimination of code duplication</b>:
+<br>
+Refactored the code to eliminate duplicated logic by introducing helper methods (`update_word_guessed`, `handle_correct_guess`, `handle_incorrect_guess`).
+3. <b>Single responsibility principle</b>
+<br>
+Ensured that each method focuses on a specific task. As an example let us look at `handle_correct_guess`: It handles the logic for a correct guess. While `handle_incorrect_guess` takes care of the logic for an incorrect guess, and lastly, `is_valid_guess` validates the guess.
+4. <b>Access Modifiers</b>:
+<br>
+Made helper methods private (using a single underscore) to indicate that they are intended for internal use within the class.
+5. <b>Minimal use of</b> `self` :
+<br>
+I significantly optimised this version of the code from my previous versione, ensuring `self` is only used for instance variables.
+
+6. <b>Consistent docstrings</b>:
+<br>
+Added docstrings to all methods to explain their purpose, parameters, and return values, following the integrated development environments (IDEs) structure format.
+
+###
+Content here
+
+###
+Content here
 
 ### 2.5: Putting it all together
 Content here...
