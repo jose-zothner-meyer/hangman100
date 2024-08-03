@@ -45,8 +45,7 @@ The knowledge contained in this repository was primarily taught by <a href='http
       - [2.4.3 Implement the function to ask for user input](#243-implement-the-function-to-ask-for-user-input)
       - [2.4.4 Refactor and optimise current code](#244-refactor-and-optimise-current-code)
     - [2.5: Putting it all together](#25-putting-it-all-together)
-      - [2.5.1 Subchapter One](#251-subchapter-one)
-      - [2.5.2 Subchapter Two](#252-subchapter-two)
+      - [2.5.1 Logic of the game](#251-logic-of-the-game)
 3. [Installation](#installation-instructions)
 4. [Usage](#usage-instructions)
 5. [File Structure](#file-structure)
@@ -62,7 +61,7 @@ The first step in setting up the environment was to navigate and create a new di
 #### 2.1.1 OS Terminal
 <p>This was done with the following commands:</p>
 
-```
+```sh
 cd /path/to/parent-directory
 mkdir hangman
 cd hangman
@@ -71,7 +70,7 @@ cd hangman
 #### 2.1.2 Conda Virtual Environment
 Next, I created and initialized a new Conda virtual environment. This helps manage dependencies and keep them isolated from other projects. I also needed to download essential packages, such as _Python_ and _random_.
 
-```
+```sh
 # Create a new Conda environment with Python
 conda create -n hangman python=3.8
 
@@ -85,7 +84,7 @@ conda install random
 #### 2.1.3 Git
 To manage the project’s version control, I initialized a Git repository, cloned the GitHub repository, and performed some basic Git operations.
 
-```
+```sh
 # Initialize a new Git repository
 git init
 
@@ -165,7 +164,7 @@ As per the course's suggestion, my README file should contain certain specific i
 #### 2.2.6 Update the latest code changes to GitHub
 Updated my GitHub repository with the latest code changes from my local machine. Started by staging the modifications and creating a commit. Then, pushed the changes to my GitHub repository.
 
-```
+```sh
 # 1. Stage all the changes
 git add .
 
@@ -273,26 +272,85 @@ The optimised version of the code is located in the milestones folder of this re
 - **Consistent docstrings**:
     - Added docstrings to all methods to explain their purpose, parameters, and return values, following the integrated development environments (IDEs) structure format.
 
-###
-Content here
-
-###
-Content here
-
 ### 2.5: Putting it all together
-Content here...
+In [_milestone_5.py_](./milestones/milestone_5.py), we have taken the code from [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py) and made several improvements and additions to bring the **Hangman game** to a complete state. <p>Here is a detailed comparison and documentation of what was done:</p>
 
-#### 2.5.1 Subchapter One
-Content here...
+#### 2.5.1 Logic of the game
+<b> New Additions and Changes:</b>
 
-#### 2.5.2 Subchapter Two
-Content here...
+- **New Function to Run the Game:**
+    - The `play_game` function has been added in `milestone_5.py` to initiate and run the Hangman game.
+    - This function creates an instance of the `Hangman` class and starts the game loop.
+    - The game continues until the player wins by guessing all letters or loses by running out of lives.
+    
+- **Game Loop Logic:**
+    - The game loop inside `play_game` checks if the player has lost all lives or has successfully guessed all letters in the word.
+    - If the player runs out of lives, a “You lost!” message is displayed.
+    - If the player guesses all letters correctly, a “Congratulations. You won the game!” message is displayed.
+    
+- **Enhanced Validation:**
+    - The `_is_valid_guess` method ensures that the player’s guess is a single alphabetical character and hasn’t been guessed before.
+    - The game continues to prompt the player for valid input until a valid guess is provided.
+    
+- **Class Structure and Methods:**
+    - The class structure and methods (`__init__`, `_update_word_guessed`, `_handle_correct_guess`, `_handle_incorrect_guess`, `_is_valid_guess`, `_check_guess`, `ask_for_input`) have been kept the same but are now utilized within the context of the `play_game` function for better modularity and flow.
 
 ## Installation Instructions
-Content here...
 
+Steps for Mac:
+
+1. **Install Miniconda**<br>
+Miniconda is a free minimal installer for Conda. Conda is a package manager that helps manage dependencies and virtual environments.
+
+- Download the Miniconda installer for macOS from the following link: [Miniconda Installer](https://docs.conda.io/en/latest/miniconda.html)
+- Select the Python 3.8 version and click the link to download the macOS 64-bit package.
+- Open the downloaded `.pkg` file and follow the installation instructions.
+
+2. **Open a New Terminal Window**<br>
+After installing _Miniconda_, you need to open a new Terminal window to start using Conda.<br>
+You can fin the Terminal by pressing the buttons _command_ and _spacebar_. Finally type Terminal in the searchbar and the system will open it for you.
+
+3. **Clone the Hangman Game Repository**
+- In the Terminal, paste the following command to clone the repository from _GitHub_:
+
+  ```sh
+    git clone https://github.com/YOUR-USERNAME/hangman100.git
+    cd hangman100
+  ```
+
+4. <b>Set up a _virtual environment_</b><br>
+Create and activate a Conda virtual environment using the following commands:
+    ```sh
+    conda create -n hangman python=3.8
+    conda activate hangman
+    ```
+
+5. <b>Run the game</b><br>
+Now you can run the Hangman game by executing the following command in the Terminal:
+    ```sh
+    python milestone_5.py
+    ```
+
+6. <b>Leaving the OS Back to Normal</b><br>
+- To deactivate the Conda virtual environment, run the following command in the Terminal:
+    ```sh
+    conda deactivate
+    ```
+
+- If you wish to remove the Conda environment entirely, use the following command:
+    ```sh
+    conda remove -n hangman -a
+    ```
 ## Usage Instructions
-Content here...
+1. **Run the Game:**
+- Execute the game script:
+  ```
+  python milestone_5.py
+  ```
+
+2. **Gameplay:**
+- Follow the on-screen prompts to guess letters.
+- The game will provide feedback on your guesses and update the game state accordingly.
 
 ## File Structure
 Content here...
