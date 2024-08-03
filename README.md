@@ -250,26 +250,25 @@ Steps:
 ### 2.4.4 Refactor and optimise current code
 The new and optimised code version can be found in the milestones folder of this repository, being called [_milestone_4_optimised.py_](./milestones/milestone_4_optmised.py).
 
-1. <b>Meaningul naming</b>:
-<br>
-Renamed methods to be more descriptive.<br>
-e.g.: `update_word_guessed`, `handle_correct_guess`, `handle_incorrect_guess`.
-2. <b>Elimination of code duplication</b>:
-<br>
-Refactored the code to eliminate duplicated logic by introducing helper methods (`update_word_guessed`, `handle_correct_guess`, `handle_incorrect_guess`).
-3. <b>Single responsibility principle</b>
-<br>
-Ensured that each method focuses on a specific task. As an example let us look at `handle_correct_guess`: It handles the logic for a correct guess. While `handle_incorrect_guess` takes care of the logic for an incorrect guess, and lastly, `is_valid_guess` validates the guess.
-4. <b>Access Modifiers</b>:
-<br>
-Made helper methods private (using a single underscore) to indicate that they are intended for internal use within the class.
-5. <b>Minimal use of</b> `self` :
-<br>
-I significantly optimised this version of the code from my previous versione, ensuring `self` is only used for instance variables.
+1. **Meaningful naming**:
+    - Renamed methods to be more descriptive.
+    - e.g.: `update_word_guessed`, `handle_correct_guess`, `handle_incorrect_guess`.
 
-6. <b>Consistent docstrings</b>:
-<br>
-Added docstrings to all methods to explain their purpose, parameters, and return values, following the integrated development environments (IDEs) structure format.
+2. **Elimination of code duplication**:
+    - Refactored the code to eliminate duplicated logic by introducing helper methods (`update_word_guessed`, `handle_correct_guess`, `handle_incorrect_guess`).
+
+3. **Single responsibility principle**:
+    - Ensured that each method focuses on a specific task.
+    - Example: `handle_correct_guess` handles the logic for a correct guess, `handle_incorrect_guess` takes care of the logic for an incorrect guess, and `is_valid_guess` validates the guess.
+
+4. **Access Modifiers**:
+    - Made helper methods private (using a single underscore) to indicate that they are intended for internal use within the class.
+
+5. **Minimal use of `self`**:
+    - Significantly optimized this version of the code from my previous version, ensuring `self` is only used for instance variables.
+
+6. **Consistent docstrings**:
+    - Added docstrings to all methods to explain their purpose, parameters, and return values, following the integrated development environments (IDEs) structure format.
 
 ###
 Content here
