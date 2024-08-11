@@ -46,6 +46,9 @@ The knowledge contained in this repository was primarily taught by <a href='http
       - [2.4.4 Refactor and optimise current code](#244-refactor-and-optimise-current-code)
     - [2.5: Putting it all together](#25-putting-it-all-together)
       - [2.5.1 Logic of the game](#251-logic-of-the-game)
+    - [2.6: Wrapped up: Handover](#25-putting-it-all-together)
+      - [2.6.1 Logic of the game](#251-logic-of-the-game)
+      - [2.6.2 Logic of the game](#251-logic-of-the-game)
 3. [Installation](#installation-instructions)
 4. [Usage](#usage-instructions)
 5. [File Structure](#file-structure)
@@ -294,6 +297,51 @@ In [_milestone_5.py_](./milestones/milestone_5.py), we have taken the code from 
     
 - **Class Structure and Methods:**
     - The class structure and methods (`__init__`, `_update_word_guessed`, `_handle_correct_guess`, `_handle_incorrect_guess`, `_is_valid_guess`, `_check_guess`, `ask_for_input`) have been kept the same but are now utilized within the context of the `play_game` function for better modularity and flow.
+
+## 2.6: Wrapped up: Milestone_6.py
+
+The provided code for the Hangman game has been significantly updated to improve functionality and integrate two new open-source modules: `english_words` and `PyDictionary`. Below is a detailed explanation of the changes made from the old code to the new version, the new functionalities added, and issues encountered during execution.
+
+### 1. Integration of `english_words` Module
+- **Old Code:** The word list for the Hangman game was manually provided.
+- **New Code:** The `english_words` module is now used to dynamically generate a set of English words (`word_list`) from the `"web2"` dataset, ensuring a more diverse and comprehensive selection of words.
+
+### 2. Integration of `PyDictionary` Module
+- **Old Code:** There was no functionality for providing the meaning of the word after the game ends.
+- **New Code:** The `PyDictionary` module is now used to fetch and display the meaning of the word after the game concludes, either through a win or a loss.
+
+### 3. Improved Word Selection
+- **Old Code:** The word was selected from a list directly.
+- **New Code:** The word list is a set, and a random word is selected after converting this set to a list. This change is necessary due to the nature of the `english_words` module, which returns a set.
+
+### 4. Enhanced User Feedback
+- **Old Code:** The initial display of the word's blanks and the word's progress after each correct guess was not shown.
+- **New Code:** The initial state of the word (as blanks) is displayed when the game starts, and it is updated with each correct guess, providing better visual feedback to the player.
+
+### 5. Game Over Enhancements
+- **Old Code:** Upon losing the game, there was no additional information provided about the word.
+- **New Code:** When the player loses, the game now reveals the word and attempts to fetch its meaning using the `PyDictionary` module. If the player wins, the same information is provided as a reward.
+
+## New Functionalities
+
+### 1. Dynamic Word List Generation
+- The `english_words` module provides a set of words, enhancing the variability and challenge of the game.
+
+### 2. Word Meaning Fetching
+- After the game ends, the `get_word_meaning` method attempts to fetch the meaning of the word using `PyDictionary`. This feature adds an educational aspect to the game.
+
+### 3. Improved Game Flow
+- The game now gives more detailed feedback throughout, including showing the word with blanks at the start and updating it dynamically as correct letters are guessed.
+
+## Known Issues
+
+### Duration Errors with `PyDictionary`
+- **Issue:** The `PyDictionary` module frequently causes duration errors when attempting to fetch the meaning of the word. This issue occurs almost every time the code is run, particularly when trying to play the game.
+- **Impact:** Due to these errors, the word's meaning may not be displayed, resulting in the fallback message suggesting the player look up the word online.
+- **Possible Solution:** Considering alternative methods or libraries for fetching word meanings may be necessary to mitigate this issue. For instance, using an API-based service, such as <a href='https://developer.oxforddictionaries.com' > Oxford Dictionaries</a> or <a href='https://languages.oup.com' > Oxford Languages</a>, with better reliability might be more appropriate for this feature.
+
+## Conclusion
+The new code version of the Hangman game offers improved functionality, a better user experience, and additional educational value. However, the duration errors with `PyDictionary` present a challenge that needs addressing to ensure the game runs smoothly and reliably.
 
 ## Installation Instructions
 
