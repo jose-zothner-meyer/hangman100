@@ -46,9 +46,10 @@ The knowledge contained in this repository was primarily taught by <a href='http
       - [2.4.4 Refactor and optimise current code](#244-refactor-and-optimise-current-code)
     - [2.5: Putting it all together](#25-putting-it-all-together)
       - [2.5.1 Logic of the game](#251-logic-of-the-game)
-    - [2.6: Wrapped up: Handover](#25-putting-it-all-together)
-      - [2.6.1 Logic of the game](#251-logic-of-the-game)
-      - [2.6.2 Logic of the game](#251-logic-of-the-game)
+    - [2.6: Wrapped up: Handover](#26-wrapped-up-handover-)
+      - [2.6.1 Improvements: step by step](#261-improvements-step-by-step)
+      - [2.6.2 New Functionalities](#262-new-functionalities)
+      - [2.6.3 Known Issues](#263-known-issues)
 3. [Installation](#installation-instructions)
 4. [Usage](#usage-instructions)
 5. [File Structure](#file-structure)
@@ -302,6 +303,8 @@ In [_milestone_5.py_](./milestones/milestone_5.py), we have taken the code from 
 
 The provided code for the Hangman game has been significantly updated to improve functionality and integrate two new open-source modules: `english_words` and `PyDictionary`. Below is a detailed explanation of the changes made from the old code to the new version, the new functionalities added, and issues encountered during execution.
 
+### 2.6.1 Improvements: step by step
+
 ### 1. Integration of `english_words` Module
 - **Old Code:** The word list for the Hangman game was manually provided.
 - **New Code:** The `english_words` module is now used to dynamically generate a set of English words (`word_list`) from the `"web2"` dataset, ensuring a more diverse and comprehensive selection of words.
@@ -322,7 +325,7 @@ The provided code for the Hangman game has been significantly updated to improve
 - **Old Code:** Upon losing the game, there was no additional information provided about the word.
 - **New Code:** When the player loses, the game now reveals the word and attempts to fetch its meaning using the `PyDictionary` module. If the player wins, the same information is provided as a reward.
 
-## New Functionalities
+### 2.6.2 New Functionalities
 
 ### 1. Dynamic Word List Generation
 - The `english_words` module provides a set of words, enhancing the variability and challenge of the game.
@@ -333,7 +336,7 @@ The provided code for the Hangman game has been significantly updated to improve
 ### 3. Improved Game Flow
 - The game now gives more detailed feedback throughout, including showing the word with blanks at the start and updating it dynamically as correct letters are guessed.
 
-## Known Issues
+### 2.6.3 Known Issues
 
 ### Duration Errors with `PyDictionary`
 - **Issue:** The `PyDictionary` module frequently causes duration errors when attempting to fetch the meaning of the word. This issue occurs almost every time the code is run, particularly when trying to play the game.
