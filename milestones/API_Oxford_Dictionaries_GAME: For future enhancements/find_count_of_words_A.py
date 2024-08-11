@@ -29,8 +29,8 @@ def count_words_starting_with_a(app_id, app_key):
         return 0
 
 # Replace with your actual app_id and app_key
-app_id = "cebcae56"
-app_key = "c1c1cd03a8e159bfe344ab6c5ece31b9"
+app_id = "MY_ID"
+app_key = "MY_KEY"
 
 word_count = count_words_starting_with_a(app_id, app_key)
 print(f"Number of words starting with 'A': {word_count}")
