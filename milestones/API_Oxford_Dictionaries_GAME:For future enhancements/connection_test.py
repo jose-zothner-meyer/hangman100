@@ -1,8 +1,8 @@
 import requests
 import json
 
-app_id = "cebcae56"  # Your app ID
-app_key = "c1c1cd03a8e159bfe344ab6c5ece31b9"  # Your app key
+app_id = "MY_ID"  # Your app ID
+app_key = "MY_KEY"  # Your app key
 language = "en-gb"
 word_id = "apple"  # A word starting with "A"
 url = f"https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/{language}/{word_id.lower()}"
